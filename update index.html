@@ -13,12 +13,45 @@
             background-size: cover;
             color: #fff;
         }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(255, 255, 255, 0.8); color: #000; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f4f4f4; }
-        .container { max-width: 800px; margin: auto; background: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 10px; }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+            background: rgba(255, 255, 255, 0.8); 
+            color: #000; 
+        }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #333; 
+            color: #fff; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+            background: rgba(0, 0, 0, 0.7); 
+            padding: 20px; 
+            border-radius: 10px; 
+        }
         .form-container { margin-top: 20px; }
-        input, button { padding: 10px; border: none; border-radius: 5px; }
+        input, button { 
+            padding: 10px; 
+            border: none; 
+            border-radius: 5px; 
+        }
+        a { color: #ffcc00; text-decoration: none; }
+        a:hover { color: yellow; text-decoration: underline; }
+        button { 
+            background-color: #007bff; 
+            color: white; 
+            cursor: pointer; 
+        }
+        button:hover { 
+            background-color: #0056b3; 
+        }
     </style>
 </head>
 <body>
@@ -58,7 +91,7 @@
         
         <section id="daftar" class="form-container">
             <h2>Formulir Pendaftaran</h2>
-            <form>
+            <form action="#" method="post">
                 <label for="nama">Nama:</label>
                 <input type="text" id="nama" name="nama" required><br><br>
                 
