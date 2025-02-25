@@ -31,9 +31,9 @@
         <section id="home">
             <h1>Perpustakaan Digital Rafikha</h1>
             <p>Selamat datang di Perpustakaan Rafikha, website ini dibuat untuk memenuhi tugas mata kuliah Pengembangan Web Perpustakaan Praktik.</p>
-            <p>Website ini dikembangkan dengan dukungan dan kerjasama dari <a href="https://library.usu.ac.id/" target="_blank">https://library.usu.ac.id/</a>.</p>
+            <p>Website ini dikembangkan dengan dukungan dan kerjasama dengan Digilib Universitas Sumatera Utara.
         </section>
-
+    <p><a href="https://library.usu.ac.id/" target="_blank">Kunjungi Perpustakaan USU</a></p>
         <section id="about">
             <h2>About Me</h2>
             <table>
