@@ -24,7 +24,7 @@
     
     <div class="container" id="home">
         <h1>Selamat Datang di Perpustakaan Digital Rafikha</h1>
-        <p>Tempat terbaik untuk mendapatkan referensi buku digital.</p>
+        <p>Website dibuat untuk memenuhi Mata Kuliah Pengembangan Web.</p>
         <div class="slideshow">
             <img class="slides active" src="https://via.placeholder.com/800x400/007bff/ffffff?text=Slide+1" alt="Slide 1">
             <img class="slides" src="https://via.placeholder.com/800x400/28a745/ffffff?text=Slide+2" alt="Slide 2">
@@ -36,15 +36,16 @@
         <h2>About Me</h2>
         <table border="1" width="100%">
             <tr><th>Nama</th><td>Rafikha Husna</td></tr>
-            <tr><th>Universitas</th><td>Universitas XYZ</td></tr>
-            <tr><th>Jurusan</th><td>Ilmu Perpustakaan</td></tr>
+            <tr><th>NIM</th><td>220709016</td></tr>
+            <tr><th>Jurusan</th><td>Perpustakaan dan Sains Informasi</td></tr>
+            <tr><th>Universitas</th><td>Universitas Sumatera Utara</td></tr>
         </table>
     </div>
     
     <div class="container" id="contact">
         <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:rafikha@example.com">rafikha@example.com</a></p>
-        <p>Telepon: +62 812-3456-7890</p>
+        <p>Email: <a href="mailto:rafikhahusna02@gmail.com">rafikhahusna02@gmail.com</a></p>
+        <p>Telepon: +62 82363627094</p>
     </div>
     
     <div class="footer">
