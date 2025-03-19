@@ -5,59 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang Saya - Perpustakaan Digital Rafikha</title>
     <style>
+        /* Warna Tema Rose */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #ffe4e1; /* Soft pink pastel */
             text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Header */
         header {
-            background-color: #2c3e50;
+            background-color: #d291bc; /* Pink tua */
             color: white;
             padding: 20px;
+            animation: slideDown 1s ease-in-out;
         }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Kontainer */
         .container {
             margin: 30px auto;
             width: 50%;
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+            animation: scaleUp 1s ease-in-out;
         }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Tabel */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
+
         th, td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: left;
         }
+
         th {
-            background-color: #2c3e50;
+            background-color: #d291bc;
             color: white;
         }
+
         td {
             background-color: #f9f9f9;
         }
+
+        /* Footer */
         footer {
             margin-top: 20px;
-            background-color: #2c3e50;
+            background-color: #d291bc;
             color: white;
             padding: 10px;
+        }
+
+        /* Efek hover pada tabel */
+        td:hover {
+            background-color: #ffdde1;
+            transition: background-color 0.3s ease;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Tentang Saya</h1>
+        <h1>🙋 Tentang Saya</h1>
     </header>
 
     <div class="container">
-        <h2>Profil</h2>
+        <h2>📌 Profil</h2>
         <table>
             <tr>
                 <th>Nama</th>
@@ -83,7 +120,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Perpustakaan Digital Rafikha.</p>
+        <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
     </footer>
 
 </body>
