@@ -11,32 +11,66 @@
             margin: 0;
             padding: 0;
             background-color: #ffe4e1; /* Soft pink pastel */
-            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Header */
         header {
             background-color: #d291bc; /* Pink tua */
             color: white;
+            text-align: center;
             padding: 20px;
         }
 
+        /* Navigasi */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e6a4b4; /* Rose gold */
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #ffb6c1; /* Soft pink */
+            border-radius: 5px;
+        }
+
+        /* Container */
         .container {
             padding: 20px;
+            text-align: center;
         }
 
-        .btn {
-            background-color: #ff85a2; /* Pink cerah */
+        /* Kartu */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+            width: 60%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #d291bc;
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
+            text-align: center;
+            padding: 10px;
             margin-top: 20px;
-        }
-
-        .btn:hover {
-            background-color: #e06387;
         }
 
         /* Confetti Style */
@@ -58,12 +92,28 @@
             top: 0;
             opacity: 0.8;
             transform: rotate(45deg);
-            animation: fall linear 3s infinite;
+            animation: fall linear 4s infinite;
         }
 
         @keyframes fall {
-            0% { transform: translateY(0) rotate(0); }
-            100% { transform: translateY(100vh) rotate(720deg); }
+            0% { transform: translateY(0) rotate(0); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Tombol Mulai Confetti */
+        .confetti-btn {
+            background-color: #d291bc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .confetti-btn:hover {
+            background-color: #e6a4b4;
         }
     </style>
 </head>
@@ -74,11 +124,24 @@
         <p>Membaca Tanpa Batas 🚀</p>
     </header>
 
-    <div class="container">
-        <h2>🎉 Selamat Datang! 🎉</h2>
-        <p>Temukan berbagai koleksi buku digital yang bisa diakses kapan saja dan di mana saja.</p>
+    <nav>
+        <a href="index.html">🏠 Beranda</a>
+        <a href="about-me.html">🙋 Tentang Saya</a>
+        <a href="contact-me.html">📩 Kontak</a>
+    </nav>
 
-        <button class="btn" onclick="startConfetti()">Mulai Confetti 🎊</button>
+    <div class="container">
+        <div class="card">
+            <h2>🎉 Selamat Datang! 🎉</h2>
+            <p>Temukan berbagai koleksi buku digital yang bisa diakses kapan saja dan di mana saja.</p>
+        </div>
+
+        <button class="confetti-btn" onclick="startConfetti()">🎊 Mulai Confetti</button>
+
+        <div class="card">
+            <h2>📚 Koleksi Terbaru</h2>
+            <p>Jelajahi buku-buku terbaru yang tersedia di perpustakaan digital kami.</p>
+        </div>
     </div>
 
     <footer>
@@ -87,21 +150,19 @@
 
     <!-- Script Confetti + Suara -->
     <script>
-        function playConfettiSound() {
-            let audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4383"); // Suara pop
-            audio.play();
-        }
+        function startConfetti() {
+            playSoftSound(); // Putar suara lembut
 
-        function createConfetti() {
             const confettiContainer = document.createElement("div");
             confettiContainer.classList.add("confetti-container");
             document.body.appendChild(confettiContainer);
 
-            for (let i = 0; i < 50; i++) { 
+            for (let i = 0; i < 50; i++) {
                 let confetti = document.createElement("div");
                 confetti.classList.add("confetti");
                 confetti.style.left = Math.random() * 100 + "vw";
                 confetti.style.animationDelay = Math.random() * 2 + "s";
+                confetti.style.setProperty('--rand', Math.random()); 
                 confettiContainer.appendChild(confetti);
             }
 
@@ -110,9 +171,10 @@
             }, 5000);
         }
 
-        function startConfetti() {
-            playConfettiSound();
-            createConfetti();
+        function playSoftSound() {
+            let audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4383"); // Suara soft pop
+            audio.volume = 0.3; // Atur suara lebih lembut
+            audio.play();
         }
     </script>
 
