@@ -26,6 +26,13 @@
             color: white;
             text-align: center;
             padding: 20px;
+            animation: bounce 1.5s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(-20px); }
+            50% { transform: translateY(5px); }
+            100% { transform: translateY(0); }
         }
 
         /* Navigasi */
@@ -41,14 +48,23 @@
             text-decoration: none;
             padding: 10px 20px;
             display: inline-block;
+            transition: transform 0.3s ease;
         }
 
         nav a:hover {
             background-color: #ffb6c1; /* Soft pink */
             border-radius: 5px;
+            animation: wiggle 0.5s ease-in-out;
         }
 
-        /* Container */
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        /* Kontainer */
         .container {
             padding: 20px;
             text-align: center;
@@ -60,20 +76,24 @@
             padding: 20px;
             margin: 10px auto;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5); /* Bayangan pink */
             width: 60%;
+            transition: transform 0.2s;
         }
 
-        /* Footer */
-        footer {
-            background-color: #d291bc;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+        .card:hover {
+            animation: shake 0.3s ease-in-out;
         }
 
-        /* Confetti Style */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            50% { transform: translateX(3px); }
+            75% { transform: translateX(-3px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Confetti */
         .confetti-container {
             position: fixed;
             top: 0;
@@ -92,28 +112,21 @@
             top: 0;
             opacity: 0.8;
             transform: rotate(45deg);
-            animation: fall linear 4s infinite;
+            animation: fall linear 3s infinite;
         }
 
         @keyframes fall {
-            0% { transform: translateY(0) rotate(0); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+            0% { transform: translateY(0) rotate(0); }
+            100% { transform: translateY(100vh) rotate(720deg); }
         }
 
-        /* Tombol Mulai Confetti */
-        .confetti-btn {
+        /* Footer */
+        footer {
             background-color: #d291bc;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
+            text-align: center;
+            padding: 10px;
             margin-top: 20px;
-        }
-
-        .confetti-btn:hover {
-            background-color: #e6a4b4;
         }
     </style>
 </head>
@@ -135,8 +148,8 @@
             <h2>🎉 Selamat Datang! 🎉</h2>
             <p>Temukan berbagai koleksi buku digital yang bisa diakses kapan saja dan di mana saja.</p>
         </div>
-
-        <button class="confetti-btn" onclick="startConfetti()">🎊 Mulai Confetti</button>
+        
+        <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
 
         <div class="card">
             <h2>📚 Koleksi Terbaru</h2>
@@ -145,13 +158,13 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Perpustakaan Digital Rafikha. 📖✨</p>
+        <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
     </footer>
 
     <!-- Script Confetti + Suara -->
     <script>
         function startConfetti() {
-            playSoftSound(); // Putar suara lembut
+            playBeautifulSound(); // Putar suara lembut
 
             const confettiContainer = document.createElement("div");
             confettiContainer.classList.add("confetti-container");
@@ -171,11 +184,13 @@
             }, 5000);
         }
 
-        function playSoftSound() {
-            let audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4383"); // Suara soft pop
-            audio.volume = 0.3; // Atur suara lebih lembut
+        function playBeautifulSound() {
+            let audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4382"); // Suara magic chime
+            audio.volume = 0.5; // Suara lembut
             audio.play();
         }
+
+        window.onload = startConfetti;
     </script>
 
 </body>
