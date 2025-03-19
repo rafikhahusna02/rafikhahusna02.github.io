@@ -11,95 +11,32 @@
             margin: 0;
             padding: 0;
             background-color: #ffe4e1; /* Soft pink pastel */
-            opacity: 0;
-            animation: fadeIn 1s forwards;
+            text-align: center;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Header dengan warna pink tua */
         header {
             background-color: #d291bc; /* Pink tua */
             color: white;
-            text-align: center;
             padding: 20px;
-            animation: bounce 1.5s ease-in-out;
         }
 
-        @keyframes bounce {
-            0% { transform: translateY(-20px); }
-            50% { transform: translateY(5px); }
-            100% { transform: translateY(0); }
-        }
-
-        /* Navigasi dengan warna rose gold */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #e6a4b4; /* Rose gold */
-            padding: 10px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #ffb6c1; /* Soft pink */
-            border-radius: 5px;
-            animation: wiggle 0.5s ease-in-out;
-        }
-
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            50% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-        }
-
-        /* Kontainer */
         .container {
             padding: 20px;
-            text-align: center;
         }
 
-        /* Kartu dengan bayangan pink */
-        .card {
-            background-color: white;
-            padding: 20px;
-            margin: 10px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5); /* Bayangan pink */
-            width: 60%;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            animation: shake 0.3s ease-in-out;
-        }
-
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-3px); }
-            50% { transform: translateX(3px); }
-            75% { transform: translateX(-3px); }
-            100% { transform: translateX(0); }
-        }
-
-        /* Footer */
-        footer {
-            background-color: #d291bc;
+        .btn {
+            background-color: #ff85a2; /* Pink cerah */
             color: white;
-            text-align: center;
-            padding: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
             margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #e06387;
         }
 
         /* Confetti Style */
@@ -137,24 +74,11 @@
         <p>Membaca Tanpa Batas 🚀</p>
     </header>
 
-    <nav>
-        <a href="index.html">🏠 Beranda</a>
-        <a href="about-me.html">🙋 Tentang Saya</a>
-        <a href="contact-me.html">📩 Kontak</a>
-    </nav>
-
     <div class="container">
-        <div class="card">
-            <h2>🎉 Selamat Datang! 🎉</h2>
-            <p>Temukan berbagai koleksi buku digital yang bisa diakses kapan saja dan di mana saja.</p>
-        </div>
-        
-        <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
+        <h2>🎉 Selamat Datang! 🎉</h2>
+        <p>Temukan berbagai koleksi buku digital yang bisa diakses kapan saja dan di mana saja.</p>
 
-        <div class="card">
-            <h2>📚 Koleksi Terbaru</h2>
-            <p>Jelajahi buku-buku terbaru yang tersedia di perpustakaan digital kami.</p>
-        </div>
+        <button class="btn" onclick="startConfetti()">Mulai Confetti 🎊</button>
     </div>
 
     <footer>
@@ -169,8 +93,6 @@
         }
 
         function createConfetti() {
-            playConfettiSound(); // Mainkan suara saat confetti muncul
-
             const confettiContainer = document.createElement("div");
             confettiContainer.classList.add("confetti-container");
             document.body.appendChild(confettiContainer);
@@ -188,7 +110,10 @@
             }, 5000);
         }
 
-        window.onload = createConfetti;
+        function startConfetti() {
+            playConfettiSound();
+            createConfetti();
+        }
     </script>
 
 </body>
