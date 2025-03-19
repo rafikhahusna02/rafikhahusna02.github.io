@@ -5,18 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Digital Rafikha</title>
     <style>
+        /* Animasi Fade-in dengan Bounce */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Header dengan animasi melompat */
         header {
             background-color: #2c3e50;
             color: white;
             text-align: center;
             padding: 20px;
+            animation: bounce 1.5s ease-in-out;
         }
+
+        @keyframes bounce {
+            0% { transform: translateY(-20px); }
+            50% { transform: translateY(5px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Navigasi dengan efek goyang */
         nav {
             display: flex;
             justify-content: center;
@@ -27,22 +45,71 @@
             color: white;
             text-decoration: none;
             padding: 10px 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
         }
         nav a:hover {
             background-color: #1abc9c;
             border-radius: 5px;
+            animation: wiggle 0.5s ease-in-out;
         }
+
+        @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Kontainer */
         .container {
             padding: 20px;
             text-align: center;
         }
+
+        /* Kartu dengan efek gemetar */
         .card {
             background-color: white;
             padding: 20px;
-            margin: 10px;
+            margin: 10px auto;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            transition: transform 0.2s;
         }
+        .card:hover {
+            animation: shake 0.3s ease-in-out;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            50% { transform: translateX(3px); }
+            75% { transform: translateX(-3px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Link interaktif dengan animasi meloncat */
+        .card a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .card a:hover {
+            color: #1abc9c;
+            animation: jump 0.5s ease-in-out;
+        }
+
+        @keyframes jump {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Footer */
         footer {
             background-color: #2c3e50;
             color: white;
@@ -55,31 +122,32 @@
 <body>
 
     <header>
-        <h1>Perpustakaan Digital Rafikha</h1>
-        <p>Membaca Tanpa Batas</p>
+        <h1>📚 Perpustakaan Digital Rafikha 📖</h1>
+        <p>Membaca Tanpa Batas 🚀</p>
     </header>
 
     <nav>
-        <a href="#">Beranda</a>
-        <a href="about-me.html">Tentang Saya</a>
-        <a href="contact-me.html">Kontak</a>
+        <a href="index.html" class="active">🏠 Beranda</a>
+        <a href="about-me.html">🙋 Tentang Saya</a>
+        <a href="contact-me.html">📩 Kontak</a>
     </nav>
 
     <div class="container">
         <div class="card">
-            <h2>Selamat Datang!</h2>
+            <h2>🎉 Selamat Datang! 🎉</h2>
             <p>Temukan berbagai koleksi buku digital yang bisa diakses kapan saja dan di mana saja.</p>
         </div>
-        <p><a href="https://library.usu.ac.id/" target="_blank">Kunjungi Perpustakaan USU</a></p>
+        
+        <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
 
         <div class="card">
-            <h2>Koleksi Terbaru</h2>
+            <h2>📚 Koleksi Terbaru</h2>
             <p>Jelajahi buku-buku terbaru yang tersedia di perpustakaan digital kami.</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Perpustakaan Digital Rafikha.</p>
+        <p>&copy; 2025 Perpustakaan Digital Rafikha. 📖✨</p>
     </footer>
 
 </body>
