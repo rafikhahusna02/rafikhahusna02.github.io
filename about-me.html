@@ -1,127 +1,158 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Saya - Perpustakaan Digital Rafikha</title>
-    <style>
-        /* Warna Tema Rose */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffe4e1; /* Soft pink pastel */
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Saya - Perpustakaan Digital Rafikha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffe4e1;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        /* Header */
-        header {
-            background-color: #d291bc; /* Pink tua */
-            color: white;
-            padding: 20px;
-            animation: slideDown 1s ease-in-out;
-        }
+    header {
+      background-color: #d291bc;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      animation: bounce 1.5s ease-in-out;
+    }
 
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+    @keyframes bounce {
+      0% { transform: translateY(-20px); }
+      50% { transform: translateY(5px); }
+      100% { transform: translateY(0); }
+    }
 
-        /* Kontainer */
-        .container {
-            margin: 30px auto;
-            width: 50%;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
-            animation: scaleUp 1s ease-in-out;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e6a4b4;
+      padding: 10px;
+    }
 
-        @keyframes scaleUp {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
 
-        /* Tabel */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+    nav a:hover {
+      background-color: #ffb6c1;
+      border-radius: 5px;
+      animation: wiggle 0.5s ease-in-out;
+    }
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
 
-        th {
-            background-color: #d291bc;
-            color: white;
-        }
+    .container {
+      margin: 30px auto;
+      width: 50%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+      animation: scaleUp 1s ease-in-out;
+    }
 
-        td {
-            background-color: #f9f9f9;
-        }
+    @keyframes scaleUp {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-        /* Footer */
-        footer {
-            margin-top: 20px;
-            background-color: #d291bc;
-            color: white;
-            padding: 10px;
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-        /* Efek hover pada tabel */
-        td:hover {
-            background-color: #ffdde1;
-            transition: background-color 0.3s ease;
-        }
-    </style>
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #d291bc;
+      color: white;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    td:hover {
+      background-color: #ffdde1;
+      transition: background-color 0.3s ease;
+    }
+
+    footer {
+      margin-top: 20px;
+      background-color: #d291bc;
+      color: white;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>🙋 Tentang Saya</h1>
-    </header>
+  <header>
+    <h1>📚 Perpustakaan Digital Rafikha 📖</h1>
+    <p>Membaca Tanpa Batas 🚀</p>
+  </header>
 
-    <div class="container">
-        <h2>📌 Profil</h2>
-        <table>
-            <tr>
-                <th>Nama</th>
-                <td>Rafikha Husna</td>
-            </tr>
-            <tr>
-                <th>NIM</th>
-                <td>220709016</td>
-            </tr>
-            <tr>
-                <th>Program Studi</th>
-                <td>Perpustakaan dan Sains Informasi</td>
-            </tr>
-            <tr>
-                <th>Universitas</th>
-                <td>Universitas Sumatera Utara</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>rafikhahusna02@gmail.com</td>
-            </tr>
-        </table>
-    </div>
+  <nav>
+    <a href="index.html">🏠 Beranda</a>
+    <a href="about-me.html">🙋 Tentang Saya</a>
+    <a href="contact-me.html">📩 Kontak</a>
+  </nav>
 
-    <footer>
-        <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
-    </footer>
+  <div class="container">
+    <h2>📌 Profil</h2>
+    <table>
+      <tr>
+        <th>Nama</th>
+        <td>Rafikha Husna</td>
+      </tr>
+      <tr>
+        <th>NIM</th>
+        <td>220709016</td>
+      </tr>
+      <tr>
+        <th>Program Studi</th>
+        <td>Perpustakaan dan Sains Informasi</td>
+      </tr>
+      <tr>
+        <th>Universitas</th>
+        <td>Universitas Sumatera Utara</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>rafikhahusna02@gmail.com</td>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
+  </footer>
 
 </body>
 </html>
