@@ -1,195 +1,252 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Digital Rafikha</title>
-    <style>
-        /* Warna Tema Rose */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffe4e1; /* Soft pink pastel */
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perpustakaan Digital Rafikha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffe4e1;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        /* Header */
-        header {
-            background-color: #d291bc; /* Pink tua */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            animation: bounce 1.5s ease-in-out;
-        }
+    header {
+      background-color: #d291bc;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      animation: bounce 1.5s ease-in-out;
+    }
 
-        @keyframes bounce {
-            0% { transform: translateY(-20px); }
-            50% { transform: translateY(5px); }
-            100% { transform: translateY(0); }
-        }
+    @keyframes bounce {
+      0% { transform: translateY(-20px); }
+      50% { transform: translateY(5px); }
+      100% { transform: translateY(0); }
+    }
 
-        /* Navigasi */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #e6a4b4; /* Rose gold */
-            padding: 10px;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e6a4b4;
+      padding: 10px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
 
-        nav a:hover {
-            background-color: #ffb6c1; /* Soft pink */
-            border-radius: 5px;
-            animation: wiggle 0.5s ease-in-out;
-        }
+    nav a:hover {
+      background-color: #ffb6c1;
+      border-radius: 5px;
+      animation: wiggle 0.5s ease-in-out;
+    }
 
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            50% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-        }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
 
-        /* Kontainer */
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
 
-        /* Kartu */
-        .card {
-            background-color: white;
-            padding: 20px;
-            margin: 10px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5); /* Bayangan pink */
-            width: 60%;
-            transition: transform 0.2s;
-        }
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+      width: 60%;
+      transition: transform 0.2s;
+    }
 
-        .card:hover {
-            animation: shake 0.3s ease-in-out;
-        }
+    .card:hover {
+      animation: shake 0.3s ease-in-out;
+    }
 
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-3px); }
-            50% { transform: translateX(3px); }
-            75% { transform: translateX(-3px); }
-            100% { transform: translateX(0); }
-        }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      50% { transform: translateX(3px); }
+      75% { transform: translateX(-3px); }
+      100% { transform: translateX(0); }
+    }
 
-        /* Confetti */
-        .confetti-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-        }
+    .search-box {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      margin: 30px auto;
+      display: block;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
 
-        .confetti {
-            width: 10px;
-            height: 10px;
-            background-color: hsl(calc(360 * var(--rand)), 100%, 60%);
-            position: absolute;
-            top: 0;
-            opacity: 0.8;
-            transform: rotate(45deg);
-            animation: fall linear 3s infinite;
-        }
+    .book-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-        @keyframes fall {
-            0% { transform: translateY(0) rotate(0); }
-            100% { transform: translateY(100vh) rotate(720deg); }
-        }
+    .book-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #d291bc;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-    </style>
+    .book-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255, 182, 193, 0.6);
+    }
+
+    .book-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: auto;
+    }
+
+    .book-title {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .confetti {
+      width: 10px;
+      height: 10px;
+      background-color: hsl(calc(360 * var(--rand)), 100%, 60%);
+      position: absolute;
+      top: 0;
+      opacity: 0.8;
+      transform: rotate(45deg);
+      animation: fall linear 3s infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(100vh) rotate(720deg); }
+    }
+
+    footer {
+      background-color: #d291bc;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>📚 Perpustakaan Digital Rafikha 📖</h1>
+    <p>Membaca Tanpa Batas 🚀</p>
+  </header>
 
-    <header>
-        <h1>📚 Perpustakaan Digital Rafikha 📖</h1>
-        <p>Membaca Tanpa Batas 🚀</p>
-    </header>
+  <nav>
+    <a href="index.html">🏠 Beranda</a>
+    <a href="about-me.html">🙋 Tentang Saya</a>
+    <a href="contact-me.html">📩 Kontak</a>
+  </nav>
 
-    <nav>
-        <a href="index.html">🏠 Beranda</a>
-        <a href="about-me.html">🙋 Tentang Saya</a>
-        <a href="contact-me.html">📩 Kontak</a>
-    </nav>
-
-    <div class="container">
-        <div class="card">
-            <h2>🎉 Selamat Datang! 🎉</h2>
-            <p>Hai! Perkenalkan nama saya Rafikha Husna. Saya mahasiswa Program Studi Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Website ini dibuat sebagai bagian dari tugas Mata Kuliah Pengembangan Web dengan tujuan melatih keterampilan dalam merancang, membangun, dan mengelola situs web secara efisien.</p>
-            <p>Dalam proses pembuatan website ini, saya belajar banyak hal, mulai dari desain, navigasi, sampai fungsinya biar nyaman digunakan. Selain buat tugas kuliah, saya juga berharap website ini bisa jadi tempat belajar yang bermanfaat dan bisa terus berkembang ke depannya.</p>
-        </div>
-        
-        <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
-
-        
+  <div class="container">
+    <div class="card">
+      <h2>🎉 Selamat Datang! 🎉</h2>
+      <p>Hai! Perkenalkan nama saya Rafikha Husna. Saya mahasiswa Program Studi Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Website ini dibuat sebagai bagian dari tugas Mata Kuliah Pengembangan Web dengan tujuan melatih keterampilan dalam merancang, membangun, dan mengelola situs web secara efisien.</p>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
-    </footer>
+    <input type="text" id="searchInput" class="search-box" placeholder="🔍 Cari judul buku..." onkeyup="filterBooks()">
 
-    <!-- Script Confetti + Suara -->
-    <script>
-        function startConfetti() {
-            playBeautifulSound(); // Putar suara lembut
+    <h2>📘 Daftar Koleksi Buku</h2>
+    <div class="book-grid">
+      <div class="book-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/62/A_Practical_English_Grammar.jpg/220px-A_Practical_English_Grammar.jpg" alt="A Practical English Grammar">
+        <p class="book-title">A Practical English Grammar</p>
+        <p>Oleh A. J. Thomson & A. V. Martinet</p>
+      </div>
+      <div class="book-card">
+        <img src="https://upload.wikimedia.org/wikipedia/id/8/8d/Sampul_Laskar_Pelangi.jpg" alt="Laskar Pelangi">
+        <p class="book-title">Laskar Pelangi</p>
+        <p>Tahun rilis: 1986</p>
+      </div>
+      <div class="book-card">
+        <img src="https://cdn.gramedia.com/uploads/items/9786022916335_Listen_to_My_Heartbeat.jpg" alt="Listen to My Heartbeat">
+        <p class="book-title">Listen to My Heartbeat</p>
+        <p>Tahun rilis: 2006</p>
+      </div>
+    </div>
 
-            const confettiContainer = document.createElement("div");
-            confettiContainer.classList.add("confetti-container");
-            document.body.appendChild(confettiContainer);
+    <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
+  </div>
 
-            for (let i = 0; i < 50; i++) {
-                let confetti = document.createElement("div");
-                confetti.classList.add("confetti");
-                confetti.style.left = Math.random() * 100 + "vw";
-                confetti.style.animationDelay = Math.random() * 2 + "s";
-                confetti.style.setProperty('--rand', Math.random()); 
-                confettiContainer.appendChild(confetti);
-            }
+  <footer>
+    <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
+  </footer>
 
-            setTimeout(() => {
-                confettiContainer.remove();
-            }, 5000);
-        }
+  <script>
+    function startConfetti() {
+      playBeautifulSound();
+      const confettiContainer = document.createElement("div");
+      confettiContainer.classList.add("confetti-container");
+      document.body.appendChild(confettiContainer);
+      for (let i = 0; i < 50; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animationDelay = Math.random() * 2 + "s";
+        confetti.style.setProperty('--rand', Math.random());
+        confettiContainer.appendChild(confetti);
+      }
+      setTimeout(() => {
+        confettiContainer.remove();
+      }, 5000);
+    }
 
-        function playBeautifulSound() {
-            let audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4382"); // Suara magic chime
-            audio.volume = 0.5; // Suara lembut
-            audio.play();
-        }
+    function playBeautifulSound() {
+      let audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4382");
+      audio.volume = 0.5;
+      audio.play();
+    }
 
-        window.onload = startConfetti;
-    </script>
+    function filterBooks() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".book-card");
 
+      cards.forEach(card => {
+        const title = card.querySelector(".book-title").textContent.toLowerCase();
+        card.style.display = title.includes(input) ? "block" : "none";
+      });
+    }
+
+    window.onload = startConfetti;
+  </script>
 </body>
 </html>
