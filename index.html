@@ -187,29 +187,30 @@
 
     <h2>📘 Daftar Koleksi Buku</h2>
     <div class="book-grid">
-  <div class="book-card">
-    <img src="https://perpustakaan.binadarma.ac.id/uploaded_files/sampul_koleksi/original/Monograf/1752.jpg" alt="A Practical English Grammar">
-    <p class="book-title">A Practical English Grammar</p>
-    <p>Oleh A. J. Thomson & A. V. Martinet</p>
-    <a href="https://taxuna.wordpress.com/wp-content/uploads/2015/11/a-practical-english-gramar-a-j-thomson.pdf" target="_blank">📥 Baca eBook</a>
-</div>
-  </div>
-  <div class="book-card">
-    <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" alt="Laskar Pelangi">
-    <p class="book-title">Laskar Pelangi</p>
-    <p>Tahun rilis: 1986</p>
-    <a href="https://smpn32.semarangkota.go.id/e-perpus/index.php?p=fstream&fid=2&bid=773" target="_blank">📥 Baca eBook</a>
-</div>
-  </div>
-  <div class="book-card">
-    <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/covBE-085.jpg" alt="Listen to My Heartbeat">
-    <p class="book-title">Listen to My Heartbeat</p>
-    <p>Tahun rilis: 2006</p>
-    <a href="https://fliphtml5.com/lafpb/qxtl/Listen_to_My_Heartbeat_-_Arumi_E/" target="_blank">📥 Baca eBook</a>
-</div>
-  </div>
-</div>
+      <div class="book-card">
+        <img src="https://perpustakaan.binadarma.ac.id/uploaded_files/sampul_koleksi/original/Monograf/1752.jpg" alt="A Practical English Grammar">
+        <p class="book-title">A Practical English Grammar</p>
+        <p>Oleh A. J. Thomson & A. V. Martinet</p>
+        <p>Tahun rilis: 1986</p>
+        <a href="https://taxuna.wordpress.com/wp-content/uploads/2015/11/a-practical-english-gramar-a-j-thomson.pdf" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
+      </div>
 
+      <div class="book-card">
+        <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" alt="Laskar Pelangi">
+        <p class="book-title">Laskar Pelangi</p>
+        <p>Oleh Andrea Hirata</p>
+        <p>Tahun rilis: 2005</p>
+        <a href="https://smpn32.semarangkota.go.id/e-perpus/index.php?p=fstream&fid=2&bid=773" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
+      </div>
+
+      <div class="book-card">
+        <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/covBE-085.jpg" alt="Listen to My Heartbeat">
+        <p class="book-title">Listen to My Heartbeat</p>
+        <p>Oleh Arumi E.</p>
+        <p>Tahun rilis: 2017</p>
+        <a href="https://fliphtml5.com/lafpb/qxtl/Listen_to_My_Heartbeat_-_Arumi_E/" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
+      </div>
+    </div>
 
     <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
   </div>
@@ -219,6 +220,10 @@
   </footer>
 
   <script>
+    function alertToEbook() {
+      alert("Anda akan dibawa ke eBook!");
+    }
+
     function startConfetti() {
       playBeautifulSound();
       const confettiContainer = document.createElement("div");
@@ -257,3 +262,4 @@
   </script>
 </body>
 </html>
+
