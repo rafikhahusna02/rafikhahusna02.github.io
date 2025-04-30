@@ -1,136 +1,167 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontak - Perpustakaan Digital Rafikha</title>
-    <style>
-        /* Warna Tema Rose */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffe4e1; /* Soft pink pastel */
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - Perpustakaan Digital Rafikha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffe4e1;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        /* Header */
-        header {
-            background-color: #d291bc; /* Pink tua */
-            color: white;
-            padding: 20px;
-            animation: slideDown 1s ease-in-out;
-        }
+    header {
+      background-color: #d291bc;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      animation: bounce 1.5s ease-in-out;
+    }
 
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+    @keyframes bounce {
+      0% { transform: translateY(-20px); }
+      50% { transform: translateY(5px); }
+      100% { transform: translateY(0); }
+    }
 
-        /* Kontainer */
-        .container {
-            margin: 30px auto;
-            width: 50%;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
-            text-align: left;
-            animation: scaleUp 1s ease-in-out;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e6a4b4;
+      padding: 10px;
+    }
 
-        @keyframes scaleUp {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
 
-        /* Formulir */
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+    nav a:hover {
+      background-color: #ffb6c1;
+      border-radius: 5px;
+      animation: wiggle 0.5s ease-in-out;
+    }
 
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
 
-        input:focus, textarea:focus {
-            border-color: #d291bc;
-            outline: none;
-            box-shadow: 0 0 5px rgba(210, 145, 188, 0.5);
-        }
+    .container {
+      margin: 30px auto;
+      width: 50%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+      text-align: left;
+      animation: scaleUp 1s ease-in-out;
+    }
 
-        /* Tombol */
-        button {
-            margin-top: 15px;
-            background-color: #d291bc;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
+    @keyframes scaleUp {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-        button:hover {
-            background-color: #e6a4b4; /* Rose gold */
-        }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
 
-        /* Footer */
-        footer {
-            margin-top: 20px;
-            background-color: #d291bc;
-            color: white;
-            padding: 10px;
-        }
-    </style>
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #d291bc;
+      outline: none;
+      box-shadow: 0 0 5px rgba(210, 145, 188, 0.5);
+    }
+
+    button {
+      margin-top: 15px;
+      background-color: #d291bc;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e6a4b4;
+    }
+
+    footer {
+      margin-top: 20px;
+      background-color: #d291bc;
+      color: white;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>📩 Kontak Kami</h1>
-    </header>
+  <header>
+    <h1>📚 Perpustakaan Digital Rafikha 📖</h1>
+    <p>Membaca Tanpa Batas 🚀</p>
+  </header>
 
-    <div class="container">
-        <h2>📞 Hubungi Kami</h2>
-        <p>Jika Anda memiliki pertanyaan atau saran, silakan isi formulir di bawah ini.</p>
+  <nav>
+    <a href="index.html">🏠 Beranda</a>
+    <a href="about-me.html">🙋 Tentang Saya</a>
+    <a href="contact-me.html">📩 Kontak</a>
+  </nav>
 
-        <form action="https://formspree.io/f/xjkyggqd" method="POST">
-            <label for="nama">Nama Lengkap</label>
-            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+  <div class="container">
+    <h2>📞 Hubungi Kami</h2>
+    <p>Jika Anda memiliki pertanyaan atau saran, silakan isi formulir di bawah ini.</p>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+    <form action="https://formspree.io/f/xjkyggqd" method="POST">
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
 
-            <label for="pesan">Pesan</label>
-            <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
 
-            <button type="submit">Kirim</button>
-        </form>
-    </div>
+      <label for="pesan">Pesan</label>
+      <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini" required></textarea>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Perpustakaan Digital Rafikha 📖✨</p>
-    </footer>
+      <button type="submit">Kirim</button>
+    </form>
+  </div>
 
-    <script>
-        // Mengatur tahun saat ini untuk hak cipta
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+  <footer>
+    <p>&copy; <span id="year"></span> Perpustakaan Digital Rafikha 📖✨</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
+
