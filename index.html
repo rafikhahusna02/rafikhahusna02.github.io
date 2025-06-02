@@ -41,6 +41,7 @@
       justify-content: center;
       background-color: #e6a4b4;
       padding: 10px;
+      flex-wrap: wrap; /* Menambahkan flex-wrap untuk responsivitas */
     }
 
     nav a {
@@ -200,6 +201,25 @@
 
     .history-list li.dark-mode {
       background-color: #444;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 600px) {
+      .card {
+        width: 90%; /* Lebar card lebih besar di perangkat kecil */
+      }
+
+      .book-card {
+        width: 100%; /* Lebar book card penuh di perangkat kecil */
+      }
+
+      nav a {
+        padding: 5px 10px; /* Mengurangi padding untuk navigasi */
+      }
+
+      .history-title {
+        font-size: 1.2em; /* Ukuran font lebih kecil di perangkat kecil */
+      }
     }
   </style>
 </head>
