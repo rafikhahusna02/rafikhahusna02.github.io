@@ -39,6 +39,7 @@
       justify-content: center;
       background-color: #e6a4b4;
       padding: 10px;
+      flex-wrap: wrap; /* Menambahkan flex-wrap untuk responsivitas */
     }
 
     nav a {
@@ -64,7 +65,8 @@
 
     .container {
       margin: 30px auto;
-      width: 50%;
+      width: 80%; /* Mengubah lebar menjadi 80% untuk responsivitas */
+      max-width: 600px; /* Menambahkan lebar maksimum */
       background-color: white;
       padding: 20px;
       border-radius: 10px;
@@ -108,6 +110,21 @@
       background-color: #d291bc;
       color: white;
       padding: 10px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 600px) {
+      .container {
+        width: 90%; /* Lebar container lebih besar di perangkat kecil */
+      }
+
+      nav a {
+        padding: 5px 10px; /* Mengurangi padding untuk navigasi */
+      }
+
+      th, td {
+        padding: 8px; /* Mengurangi padding di tabel untuk perangkat kecil */
+      }
     }
   </style>
 </head>
