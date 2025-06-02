@@ -163,6 +163,47 @@
       padding: 10px;
       margin-top: 20px;
     }
+
+    .cookie-consent {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1e293b;
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      z-index: 10000;
+      text-align: center;
+      display: none;
+    }
+
+    .cookie-consent p {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+
+    .cookie-btn {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cookie-accept {
+      background-color: #22c55e;
+      color: white;
+    }
+
+    .cookie-reject {
+      background-color: #ef4444;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -219,6 +260,15 @@
     <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
   </footer>
 
+  <!-- Cookie Consent -->
+  <div class="cookie-consent" id="cookieConsent">
+    <p>
+      Kami menggunakan cookies untuk meningkatkan pengalaman Anda di situs ini. Dengan mengklik "Terima Semua", Anda menyetujui penggunaan cookies kami. Anda juga dapat memilih untuk menolak cookies non-essensial.
+    </p>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Terima Semua</button>
+    <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Tolak</button>
+  </div>
+
   <script>
     function alertToEbook() {
       alert("Anda akan dibawa ke eBook!");
@@ -258,8 +308,27 @@
       });
     }
 
-    window.onload = startConfetti;
+    function checkCookieConsent() {
+      const consent = localStorage.getItem("cookieConsent");
+      if (!consent) {
+        document.getElementById("cookieConsent").style.display = "block";
+      }
+    }
+
+    function acceptCookies() {
+      localStorage.setItem("cookieConsent", "accepted");
+      document.getElementById("cookieConsent").style.display = "none";
+    }
+
+    function rejectCookies() {
+      localStorage.setItem("cookieConsent", "rejected");
+      document.getElementById("cookieConsent").style.display = "none";
+    }
+
+    window.onload = function () {
+      checkCookieConsent();
+      startConfetti();
+    };
   </script>
 </body>
 </html>
-
