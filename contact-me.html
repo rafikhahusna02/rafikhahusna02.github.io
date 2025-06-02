@@ -39,6 +39,7 @@
       justify-content: center;
       background-color: #e6a4b4;
       padding: 10px;
+      flex-wrap: wrap; /* Added for responsiveness */
     }
 
     nav a {
@@ -64,7 +65,8 @@
 
     .container {
       margin: 30px auto;
-      width: 50%;
+      width: 80%; /* Changed to 80% for better mobile responsiveness */
+      max-width: 600px; /* Added max-width */
       background-color: white;
       padding: 20px;
       border-radius: 10px;
@@ -121,6 +123,29 @@
       color: white;
       padding: 10px;
     }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 600px) {
+      .container {
+        width: 90%; /* Adjust width for smaller screens */
+      }
+
+      nav a {
+        padding: 5px 10px; /* Reduce padding for navigation links */
+      }
+
+      label {
+        font-size: 14px; /* Adjust label font size */
+      }
+
+      input, textarea {
+        font-size: 14px; /* Adjust input font size */
+      }
+
+      button {
+        font-size: 14px; /* Adjust button font size */
+      }
+    }
   </style>
 </head>
 <body>
@@ -164,4 +189,3 @@
 
 </body>
 </html>
-
