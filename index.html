@@ -9,80 +9,70 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #ffe4e1;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
+      background-image: url('https://images.unsplash.com/photo-1702974915123-16739a9c3577?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #333;
     }
 
     body.dark-mode {
       background-color: #1e1e1e;
-      color: #ffffff;
+      background-image: none;
+      color: #fff;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    header {
-      background-color: #d291bc;
-      color: white;
+    header, footer {
+      background-color: rgba(255, 255, 255, 0.8);
       text-align: center;
       padding: 20px;
-      animation: bounce 1.5s ease-in-out;
+      backdrop-filter: blur(6px);
     }
 
-    header.dark-mode {
-      background-color: #3c3c3c;
+    header.dark-mode, footer.dark-mode {
+      background-color: #2c2c2c;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background-color: #e6a4b4;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(4px);
       padding: 10px;
-      flex-wrap: wrap; /* Menambahkan flex-wrap untuk responsivitas */
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: white;
+      color: #333;
       text-decoration: none;
-      padding: 10px 20px;
-      display: inline-block;
-      transition: transform 0.3s ease;
+      font-weight: bold;
     }
 
     nav a:hover {
-      background-color: #ffb6c1;
-      border-radius: 5px;
-      animation: wiggle 0.5s ease-in-out;
+      text-decoration: underline;
     }
 
     .container {
       padding: 20px;
-      text-align: center;
-    }
-
-    .card {
-      background-color: white;
-      padding: 20px;
-      margin: 10px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
-      width: 60%;
-      transition: transform 0.2s;
     }
 
-    .card.dark-mode {
+    .dark-mode .container {
       background-color: #2c2c2c;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .dark-mode nav a {
+      color: white;
     }
 
     .search-box {
-      padding: 10px;
-      width: 80%;
+      width: 100%;
       max-width: 400px;
-      margin: 30px auto;
+      padding: 10px;
+      margin: 20px auto;
       display: block;
       border-radius: 5px;
       border: 1px solid #ccc;
@@ -98,22 +88,20 @@
     .book-card {
       background-color: white;
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       width: 250px;
       padding: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+      text-align: center;
+      transition: transform 0.3s ease;
     }
 
-    .book-card.dark-mode {
-      background-color: #3c3c3c;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    .book-card:hover {
+      transform: scale(1.03);
     }
 
     .book-card img {
       width: 100%;
       border-radius: 10px;
-      height: auto;
     }
 
     .book-title {
@@ -121,16 +109,36 @@
       margin-top: 10px;
     }
 
-    footer {
-      background-color: #d291bc;
+    .book-card.dark-mode {
+      background-color: #444;
       color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
     }
 
-    footer.dark-mode {
-      background-color: #3c3c3c;
+    .dark-mode-toggle {
+      padding: 10px 20px;
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .history-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .history-list li {
+      background: #f0f0f0;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .dark-mode .history-list li {
+      background: #444;
+      color: white;
     }
 
     .cookie-consent {
@@ -141,20 +149,17 @@
       background-color: #1e293b;
       color: white;
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
       max-width: 400px;
       z-index: 10000;
-      text-align: center;
       display: none;
     }
 
     .cookie-btn {
       padding: 10px 20px;
-      margin: 0 10px;
+      margin: 10px 5px 0;
       border: none;
-      border-radius: 10px;
-      font-weight: bold;
+      border-radius: 5px;
       cursor: pointer;
     }
 
@@ -168,57 +173,26 @@
       color: white;
     }
 
-    .dark-mode-toggle {
-      margin: 20px;
-      padding: 10px 20px;
-      background-color: #d291bc;
+    .welcome-card {
+      text-align: center;
+      background-color: #e0f2fe;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .dark-mode .welcome-card {
+      background-color: #1e293b;
       color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
     }
 
-    .dark-mode-toggle:hover {
-      background-color: #ffb6c1;
-    }
-
-    .history-title {
-      margin-top: 30px;
-      font-size: 1.5em;
-    }
-
-    .history-list {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .history-list li {
-      background-color: #f0f0f0;
-      margin: 5px 0;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .history-list li.dark-mode {
-      background-color: #444;
-    }
-
-    /* Media Queries for Responsiveness */
     @media (max-width: 600px) {
-      .card {
-        width: 90%; /* Lebar card lebih besar di perangkat kecil */
-      }
-
       .book-card {
-        width: 100%; /* Lebar book card penuh di perangkat kecil */
+        width: 100%;
       }
 
-      nav a {
-        padding: 5px 10px; /* Mengurangi padding untuk navigasi */
-      }
-
-      .history-title {
-        font-size: 1.2em; /* Ukuran font lebih kecil di perangkat kecil */
+      nav {
+        flex-direction: column;
       }
     }
   </style>
@@ -237,11 +211,15 @@
 
   <div class="container">
     <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-    <div class="card">
+
+    <div class="welcome-card">
       <h2>🎉 Selamat Datang! 🎉</h2>
       <p>Hai! Perkenalkan nama saya Rafikha Husna. Saya mahasiswa Program Studi Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Website ini dibuat sebagai bagian dari tugas Mata Kuliah Pengembangan Web dengan tujuan melatih keterampilan dalam merancang, membangun, dan mengelola situs web secara efisien.</p>
     </div>
 
+    <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
+  </div>
+  
     <input type="text" id="searchInput" class="search-box" placeholder="🔍 Cari judul buku..." onkeyup="filterBooks()">
 
     <h2>📘 Daftar Koleksi Buku</h2>
@@ -271,11 +249,8 @@
       </div>
     </div>
 
-    <h2 class="history-title">📚 Riwayat Buku yang Dibaca</h2>
+    <h3>📚 Riwayat Buku yang Dibaca</h3>
     <ul id="readHistory" class="history-list"></ul>
-
-    <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
-  </div>
 
   <footer>
     <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
@@ -283,9 +258,7 @@
 
   <!-- Cookie Consent -->
   <div class="cookie-consent" id="cookieConsent">
-    <p>
-      Kami menggunakan cookies untuk meningkatkan pengalaman Anda di situs ini. Dengan mengklik "Terima Semua", Anda menyetujui penggunaan cookies kami. Anda juga dapat memilih untuk menolak cookies non-essensial.
-    </p>
+    <p>Kami menggunakan cookies untuk meningkatkan pengalaman Anda di situs ini.</p>
     <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Terima Semua</button>
     <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Tolak</button>
   </div>
@@ -295,59 +268,28 @@
       alert("Anda akan dibawa ke eBook!");
     }
 
-    function startConfetti() {
-      playBeautifulSound();
-      const confettiContainer = document.createElement("div");
-      confettiContainer.classList.add("confetti-container");
-      document.body.appendChild(confettiContainer);
-      for (let i = 0; i < 50; i++) {
-        let confetti = document.createElement("div");
-        confetti.classList.add("confetti");
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.animationDelay = Math.random() * 2 + "s";
-        confetti.style.setProperty('--rand', Math.random());
-        confettiContainer.appendChild(confetti);
-      }
-      setTimeout(() => {
-        confettiContainer.remove();
-      }, 5000);
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('header').classList.toggle('dark-mode');
+      document.querySelector('footer').classList.toggle('dark-mode');
+      document.querySelectorAll('.book-card').forEach(c => c.classList.toggle('dark-mode'));
+      document.querySelector('.container').classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     }
 
-    function playBeautifulSound() {
-      let audio = new Audio("https://www.fesliyanstudios.com/play-mp3/4382");
-      audio.volume = 0.5;
-      audio.play();
+    function checkDarkMode() {
+      if (localStorage.getItem('darkMode') === 'true') {
+        toggleDarkMode();
+      }
     }
 
     function filterBooks() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const cards = document.querySelectorAll(".book-card");
-
       cards.forEach(card => {
         const title = card.querySelector(".book-title").textContent.toLowerCase();
         card.style.display = title.includes(input) ? "block" : "none";
       });
-    }
-
-    function toggleDarkMode() {
-      const body = document.body;
-      const header = document.querySelector('header');
-      const footer = document.querySelector('footer');
-      const cards = document.querySelectorAll('.card, .book-card');
-
-      body.classList.toggle('dark-mode');
-      header.classList.toggle('dark-mode');
-      footer.classList.toggle('dark-mode');
-      cards.forEach(card => card.classList.toggle('dark-mode'));
-
-      localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-    }
-
-    function checkDarkMode() {
-      const darkMode = localStorage.getItem('darkMode') === 'true';
-      if (darkMode) {
-        toggleDarkMode();
-      }
     }
 
     function markAsRead(bookTitle) {
@@ -361,15 +303,12 @@
 
     function displayReadHistory() {
       const readHistory = JSON.parse(localStorage.getItem('readHistory')) || [];
-      const historyList = document.getElementById('readHistory');
-      historyList.innerHTML = '';
+      const list = document.getElementById("readHistory");
+      list.innerHTML = "";
       readHistory.forEach(book => {
-        const li = document.createElement('li');
+        const li = document.createElement("li");
         li.textContent = book;
-        if (document.body.classList.contains('dark-mode')) {
-          li.classList.add('dark-mode');
-        }
-        historyList.appendChild(li);
+        list.appendChild(li);
       });
     }
 
@@ -394,7 +333,6 @@
       checkDarkMode();
       checkCookieConsent();
       displayReadHistory();
-      startConfetti();
     };
   </script>
 </body>
