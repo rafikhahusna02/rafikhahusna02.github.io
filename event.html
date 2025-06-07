@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event - Perpustakaan Digital Rafikha</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1702974915123-16739a9c3577?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #333;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    header, footer {
+      background-color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .event {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      overflow: hidden;
+      animation: slideUp 0.8s ease forwards;
+    }
+
+    .event img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .event-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .event h3 {
+      margin-top: 0;
+      color: #0077cc;
+    }
+
+    .event p {
+      margin: 8px 0;
+    }
+
+    .event a.btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .event a.btn:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 30px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .event {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .event img {
+        max-width: 100%;
+      }
+
+      .event-content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 Perpustakaan Digital Rafikha 📖</h1>
+    <p>Membaca Tanpa Batas 🚀</p>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Beranda</a>
+    <a href="about-me.html">🙋 Tentang Saya</a>
+    <a href="contact-me.html">📩 Kontak</a>
+    <a href="event.html">📅 Event</a>
+  </nav>
+
+  <div class="container">
+    <h2>📅 Event Terbaru</h2>
+
+    <div class="event">
+       <img src="https://asset.kompas.com/crops/d6ad85h-keoYYFXZD8RcjQ9qrZQ=/0x0:510x340/1200x800/data/photo/2025/05/26/68341adf84536.png"
+     alt="Poster IEM Fair 2025" 
+     style="width:100%; max-width:400px; border-radius:10px;">
+      <div class="event-content">
+        <h3>Lomba Karya Ilmiah Nasional 2025</h3>
+        <p><strong>Tanggal:</strong> 3 Juni – 1 Juli 2025</p>
+        <p><em>Lokasi:</em> Hybrid - Online & Kementerian PUPR</p>
+        <p>Kompetisi penulisan ilmiah bertema infrastruktur berkelanjutan oleh Kementerian PUPR. Hadiah jutaan rupiah!</p>
+        <a href="https://lki.pu.go.id/" target="_blank" class="btn">Info Selengkapnya</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="https://infolomba.id/images/event/poster/national-competition-iem-fair-2025-61.png" 
+     alt="Poster IEM Fair 2025" 
+     style="width:100%; max-width:400px; border-radius:10px;">
+      <div class="event-content">
+        <h3>IEM Fair 2025 (Islamic Education Management)</h3>
+        <p><strong>Tanggal:</strong> 15 April 2025</p>
+        <p><em>Lokasi:</em> Kampus II UINSU, Jl. William Iskandar, Medan</p>
+        <p>Fair tahunan oleh Prodi IEM UINSU dengan lomba infografis, debat, tari, dll. Terbuka untuk umum.</p>
+        <a href="https://www.instagram.com/iem.fair/" target="_blank" class="btn">Cek di Instagram</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZx-oDkQALSMcWaRm7SgwRP1jE-gCGxF94wq7ZG9FXxJoV1h3wQuFA_ecNngpjfMN7F71jL5aXE0BjLFYXZ247lEgwAP_FoFpZqrcafqKRTKmxLabn5IYhVl_zXGXojF_lVTg7r6JzN3eItZmgQ-YaU8fj9O9j6wbIkN0haFNjhzJ3lsZDVj2V63x46ZQ/s717/lomba%202025.png"
+     alt="Poster Lomba 2025"
+     style="width:100%; max-width:400px; border-radius:10px;">
+      <div class="event-content">
+        <h3>Lomba Baca Puisi Nasional AISKA 2025</h3>
+        <p><strong>Tanggal:</strong> 10 Februari 2025</p>
+        <p><em>Lokasi:</em> Gedung RKP Universitas Singaperbangsa Karawang</p>
+        <p>Kompetisi baca puisi skala nasional untuk pelajar dan mahasiswa se-Indonesia.</p>
+        <a href="https://www.instagram.com/aiska_official/" target="_blank" class="btn">Lihat di Instagram</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
+  </footer>
+</body>
+</html>
