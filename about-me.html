@@ -3,133 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tentang Saya - Perpustakaan Digital Rafikha</title>
+  <title>About Me - Rafikha Husna</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #ffe4e1;
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
+      background-image: url('https://images.unsplash.com/photo-1702974915123-16739a9c3577?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #333;
+      transition: background 0.4s ease, color 0.4s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    body.dark-mode {
+      background-color: #1e1e1e;
+      background-image: none;
+      color: #fff;
     }
 
-    header {
-      background-color: #d291bc;
-      color: white;
+    header, footer {
+      background-color: rgba(255, 255, 255, 0.8);
       text-align: center;
       padding: 20px;
-      animation: bounce 1.5s ease-in-out;
+      backdrop-filter: blur(6px);
+      animation: fadeIn 1.2s ease-in;
     }
 
-    @keyframes bounce {
-      0% { transform: translateY(-20px); }
-      50% { transform: translateY(5px); }
-      100% { transform: translateY(0); }
+    header.dark-mode, footer.dark-mode {
+      background-color: #2c2c2c;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background-color: #e6a4b4;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(4px);
       padding: 10px;
-      flex-wrap: wrap; /* Menambahkan flex-wrap untuk responsivitas */
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: white;
+      color: #333;
       text-decoration: none;
-      padding: 10px 20px;
-      display: inline-block;
-      transition: transform 0.3s ease;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #ffb6c1;
-      border-radius: 5px;
-      animation: wiggle 0.5s ease-in-out;
-    }
-
-    @keyframes wiggle {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(5deg); }
-      50% { transform: rotate(-5deg); }
-      75% { transform: rotate(5deg); }
+      text-decoration: underline;
     }
 
     .container {
-      margin: 30px auto;
-      width: 80%; /* Mengubah lebar menjadi 80% untuk responsivitas */
-      max-width: 600px; /* Menambahkan lebar maksimum */
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
-      animation: scaleUp 1s ease-in-out;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      max-width: 900px;
+      backdrop-filter: blur(4px);
+      animation: slideUp 1s ease-out;
     }
 
-    @keyframes scaleUp {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    .dark-mode .container {
+      background-color: #2c2c2c;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #d291bc;
+    .dark-mode nav a {
       color: white;
     }
 
-    td {
-      background-color: #f9f9f9;
+    .profile {
+      text-align: center;
+      animation: fadeIn 1.5s ease;
     }
 
-    td:hover {
-      background-color: #ffdde1;
+    .profile img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+      transition: transform 0.4s ease;
+    }
+
+    .profile img:hover {
+      transform: scale(1.05);
+    }
+
+    .profile h2 {
+      margin: 10px 0 5px;
+    }
+
+    .biodata {
+      flex: 1;
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      padding: 20px;
+      min-width: 300px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease;
+    }
+
+    .dark-mode .biodata {
+      background-color: #444;
+      color: white;
+    }
+
+    .biodata h3 {
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .biodata ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .biodata li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed #ccc;
+      padding: 10px 0;
+      font-family: monospace;
+      transition: background-color 0.3s;
+    }
+
+    .biodata li:hover {
+      background-color: #f0f8ff;
+    }
+
+    .dark-mode .biodata li:hover {
+      background-color: #555;
+    }
+
+    .biodata li span:first-child {
+      display: flex;
+      gap: 10px;
+      font-weight: bold;
+    }
+
+    .btn-cv {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #d291bc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    footer {
-      margin-top: 20px;
-      background-color: #d291bc;
-      color: white;
-      padding: 10px;
+    .btn-cv:hover {
+      background-color: #c074a8;
     }
 
-    /* Media Queries for Responsiveness */
-    @media (max-width: 600px) {
+    .dark-mode .btn-cv {
+      background-color: #8c5c8d;
+    }
+
+    .dark-mode-toggle {
+      margin: 20px auto;
+      display: block;
+      padding: 10px 20px;
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dark-mode .dark-mode-toggle {
+      background-color: #ccc;
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
       .container {
-        width: 90%; /* Lebar container lebih besar di perangkat kecil */
+        flex-direction: column;
       }
 
-      nav a {
-        padding: 5px 10px; /* Mengurangi padding untuk navigasi */
+      .profile img {
+        width: 120px;
+        height: 120px;
       }
+    }
 
-      th, td {
-        padding: 8px; /* Mengurangi padding di tabel untuk perangkat kecil */
-      }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>📚 Perpustakaan Digital Rafikha 📖</h1>
     <p>Membaca Tanpa Batas 🚀</p>
@@ -141,35 +225,47 @@
     <a href="contact-me.html">📩 Kontak</a>
   </nav>
 
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
   <div class="container">
-    <h2>📌 Profil</h2>
-    <table>
-      <tr>
-        <th>Nama</th>
-        <td>Rafikha Husna</td>
-      </tr>
-      <tr>
-        <th>NIM</th>
-        <td>220709016</td>
-      </tr>
-      <tr>
-        <th>Program Studi</th>
-        <td>Perpustakaan dan Sains Informasi</td>
-      </tr>
-      <tr>
-        <th>Universitas</th>
-        <td>Universitas Sumatera Utara</td>
-      </tr>
-      <tr>
-        <th>Email</th>
-        <td>rafikhahusna02@gmail.com</td>
-      </tr>
-    </table>
+    <div class="profile">
+      <img src="https://cdn0-production-images-kly.akamaized.net/y1ZgTkgJ5_sS2m8P2ExbXzxLShs=/1280x720/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4293982/original/014530100_1673957977-hijab_1.jpg" alt="Foto Profil Rafikha Husna">
+      <h2>Rafikha Husna</h2>
+      <p>Mahasiswa</p>
+    </div>
+
+    <div class="biodata">
+      <h3>STATUS KARAKTER</h3>
+      <ul>
+        <li><span>📛 Nama</span> Rafikha Husna</li>
+        <li><span>🆔 NIM</span> 220709016</li>
+        <li><span>📚 Program Studi</span> Perpustakaan & Sains Informasi</li>
+        <li><span>🏫 Universitas</span> Universitas Sumatera Utara</li>
+        <li><span>📧 Email</span> <a href="mailto:rafikhahusna02@gmail.com">rafikhahusna02@gmail.com</a></li>
+        <li><span>🔗 LinkedIn</span> <a href="https://www.linkedin.com/in/rafikhah-husna-8a47732b4/" target="_blank">Lihat Profil</a></li>
+      </ul>
+
+      <a href="CV Rafikha Husna.pdf" download class="btn-cv">📄 Download CV</a>
+    </div>
   </div>
 
   <footer>
     <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
   </footer>
 
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('header').classList.toggle('dark-mode');
+      document.querySelector('footer').classList.toggle('dark-mode');
+      document.querySelector('.container').classList.toggle('dark-mode');
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem('darkMode') === 'true') {
+        toggleDarkMode();
+      }
+    };
+  </script>
 </body>
 </html>
