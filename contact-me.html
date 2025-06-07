@@ -9,141 +9,148 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #ffe4e1;
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
+      background-image: url('https://images.unsplash.com/photo-1702974915123-16739a9c3577?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    header {
-      background-color: #d291bc;
+    body.dark-mode {
+      background-color: #1e1e1e;
+      background-image: none;
       color: white;
+    }
+
+    header, footer {
+      background-color: rgba(255, 255, 255, 0.8);
       text-align: center;
       padding: 20px;
-      animation: bounce 1.5s ease-in-out;
+      backdrop-filter: blur(6px);
     }
 
-    @keyframes bounce {
-      0% { transform: translateY(-20px); }
-      50% { transform: translateY(5px); }
-      100% { transform: translateY(0); }
+    header.dark-mode, footer.dark-mode {
+      background-color: #2c2c2c;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background-color: #e6a4b4;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(4px);
       padding: 10px;
-      flex-wrap: wrap; /* Added for responsiveness */
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: white;
+      color: #333;
       text-decoration: none;
-      padding: 10px 20px;
-      display: inline-block;
-      transition: transform 0.3s ease;
+      font-weight: bold;
     }
 
     nav a:hover {
-      background-color: #ffb6c1;
-      border-radius: 5px;
-      animation: wiggle 0.5s ease-in-out;
+      text-decoration: underline;
     }
 
-    @keyframes wiggle {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(5deg); }
-      50% { transform: rotate(-5deg); }
-      75% { transform: rotate(5deg); }
+    .dark-mode nav a {
+      color: white;
     }
 
     .container {
-      margin: 30px auto;
-      width: 80%; /* Changed to 80% for better mobile responsiveness */
-      max-width: 600px; /* Added max-width */
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
-      text-align: left;
-      animation: scaleUp 1s ease-in-out;
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 600px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: slideUp 0.8s ease;
     }
 
-    @keyframes scaleUp {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    .dark-mode .container {
+      background-color: #2c2c2c;
+    }
+
+    h2 {
+      text-align: center;
     }
 
     label {
-      font-weight: bold;
       display: block;
-      margin-top: 10px;
+      margin-top: 15px;
+      font-weight: bold;
     }
 
     input, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      border-radius: 5px;
       font-size: 16px;
     }
 
     input:focus, textarea:focus {
       border-color: #d291bc;
       outline: none;
-      box-shadow: 0 0 5px rgba(210, 145, 188, 0.5);
+      box-shadow: 0 0 6px rgba(210, 145, 188, 0.4);
     }
 
     button {
-      margin-top: 15px;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: #d291bc;
       color: white;
-      padding: 10px 15px;
       border: none;
+      border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
       transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #e6a4b4;
+      background-color: #c678a6;
     }
 
-    footer {
-      margin-top: 20px;
-      background-color: #d291bc;
+    .dark-mode button {
+      background-color: #8c5c8d;
+    }
+
+    .dark-mode-toggle {
+      margin: 20px auto;
+      display: block;
+      padding: 10px 20px;
+      background-color: #555;
       color: white;
-      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
-    /* Media Queries for Responsiveness */
+    .dark-mode .dark-mode-toggle {
+      background-color: #ccc;
+      color: #000;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 600px) {
       .container {
-        width: 90%; /* Adjust width for smaller screens */
-      }
-
-      nav a {
-        padding: 5px 10px; /* Reduce padding for navigation links */
-      }
-
-      label {
-        font-size: 14px; /* Adjust label font size */
+        width: 90%;
+        padding: 20px;
       }
 
       input, textarea {
-        font-size: 14px; /* Adjust input font size */
+        font-size: 14px;
       }
 
       button {
-        font-size: 14px; /* Adjust button font size */
+        font-size: 14px;
       }
     }
   </style>
@@ -160,6 +167,8 @@
     <a href="about-me.html">🙋 Tentang Saya</a>
     <a href="contact-me.html">📩 Kontak</a>
   </nav>
+
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
   <div class="container">
     <h2>📞 Hubungi Kami</h2>
@@ -185,7 +194,20 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('header').classList.toggle('dark-mode');
+      document.querySelector('footer').classList.toggle('dark-mode');
+      document.querySelector('.container').classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem('darkMode') === 'true') {
+        toggleDarkMode();
+      }
+    };
+  </script>
 </body>
 </html>
