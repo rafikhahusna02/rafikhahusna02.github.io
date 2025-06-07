@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Perpustakaan Digital Rafikha</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -14,6 +18,8 @@
       background-attachment: fixed;
       background-position: center;
       color: #333;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
     }
 
     body.dark-mode {
@@ -27,6 +33,7 @@
       text-align: center;
       padding: 20px;
       backdrop-filter: blur(6px);
+      transition: background-color 0.3s ease;
     }
 
     header.dark-mode, footer.dark-mode {
@@ -92,7 +99,7 @@
       width: 250px;
       padding: 10px;
       text-align: center;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, opacity 1s ease;
     }
 
     .book-card:hover {
@@ -186,6 +193,44 @@
       color: white;
     }
 
+    .login-form {
+      max-width: 400px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+
+    .login-form input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0ea5e9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dark-mode .login-form {
+      background-color: #334155;
+      border-color: #555;
+    }
+
+    .dark-mode .login-form input {
+      background-color: #1e293b;
+      color: white;
+      border-color: #444;
+    }
+
     @media (max-width: 600px) {
       .book-card {
         width: 100%;
@@ -213,51 +258,57 @@
   <div class="container">
     <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
-    <div class="welcome-card">
+    <div class="login-form" id="loginForm">
+      <h3>🔐 Login</h3>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div class="welcome-card" id="welcomeCard" style="display:none;">
       <h2>🎉 Selamat Datang! 🎉</h2>
       <p>Hai! Perkenalkan nama saya Rafikha Husna. Saya mahasiswa Program Studi Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Website ini dibuat sebagai bagian dari tugas Mata Kuliah Pengembangan Web dengan tujuan melatih keterampilan dalam merancang, membangun, dan mengelola situs web secara efisien.</p>
     </div>
 
     <p><a href="https://library.usu.ac.id/" target="_blank">🔗 Kunjungi Perpustakaan USU</a></p>
   </div>
-  
-    <input type="text" id="searchInput" class="search-box" placeholder="🔍 Cari judul buku..." onkeyup="filterBooks()">
 
-    <h2>📘 Daftar Koleksi Buku</h2>
-    <div class="book-grid">
-      <div class="book-card" onclick="markAsRead('A Practical English Grammar')">
-        <img src="https://perpustakaan.binadarma.ac.id/uploaded_files/sampul_koleksi/original/Monograf/1752.jpg" alt="A Practical English Grammar">
-        <p class="book-title">A Practical English Grammar</p>
-        <p>Oleh A. J. Thomson & A. V. Martinet</p>
-        <p>Tahun rilis: 1986</p>
-        <a href="https://taxuna.wordpress.com/wp-content/uploads/2015/11/a-practical-english-gramar-a-j-thomson.pdf" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
-      </div>
+  <input type="text" id="searchInput" class="search-box" placeholder="🔍 Cari judul buku..." onkeyup="filterBooks()">
 
-      <div class="book-card" onclick="markAsRead('Laskar Pelangi')">
-        <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" alt="Laskar Pelangi">
-        <p class="book-title">Laskar Pelangi</p>
-        <p>Oleh Andrea Hirata</p>
-        <p>Tahun rilis: 2005</p>
-        <a href="https://smpn32.semarangkota.go.id/e-perpus/index.php?p=fstream&fid=2&bid=773" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
-      </div>
-
-      <div class="book-card" onclick="markAsRead('Listen to My Heartbeat')">
-        <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/covBE-085.jpg" alt="Listen to My Heartbeat">
-        <p class="book-title">Listen to My Heartbeat</p>
-        <p>Oleh Arumi E.</p>
-        <p>Tahun rilis: 2017</p>
-        <a href="https://fliphtml5.com/lafpb/qxtl/Listen_to_My_Heartbeat_-_Arumi_E/" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
-      </div>
+  <h2>📘 Daftar Koleksi Buku</h2>
+  <div class="book-grid">
+    <div class="book-card" onclick="markAsRead('A Practical English Grammar')">
+      <img src="https://perpustakaan.binadarma.ac.id/uploaded_files/sampul_koleksi/original/Monograf/1752.jpg" alt="A Practical English Grammar">
+      <p class="book-title">A Practical English Grammar</p>
+      <p>Oleh A. J. Thomson & A. V. Martinet</p>
+      <p>Tahun rilis: 1986</p>
+      <a href="https://taxuna.wordpress.com/wp-content/uploads/2015/11/a-practical-english-gramar-a-j-thomson.pdf" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
     </div>
 
-    <h3>📚 Riwayat Buku yang Dibaca</h3>
-    <ul id="readHistory" class="history-list"></ul>
+    <div class="book-card" onclick="markAsRead('Laskar Pelangi')">
+      <img src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg" alt="Laskar Pelangi">
+      <p class="book-title">Laskar Pelangi</p>
+      <p>Oleh Andrea Hirata</p>
+      <p>Tahun rilis: 2005</p>
+      <a href="https://smpn32.semarangkota.go.id/e-perpus/index.php?p=fstream&fid=2&bid=773" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
+    </div>
+
+    <div class="book-card" onclick="markAsRead('Listen to My Heartbeat')">
+      <img src="https://inc.mizanstore.com/aassets/img/com_cart/produk/covBE-085.jpg" alt="Listen to My Heartbeat">
+      <p class="book-title">Listen to My Heartbeat</p>
+      <p>Oleh Arumi E.</p>
+      <p>Tahun rilis: 2017</p>
+      <a href="https://fliphtml5.com/lafpb/qxtl/Listen_to_My_Heartbeat_-_Arumi_E/" target="_blank" onclick="alertToEbook()">📥 Baca eBook</a>
+    </div>
+  </div>
+
+  <h3>📚 Riwayat Buku yang Dibaca</h3>
+  <ul id="readHistory" class="history-list"></ul>
 
   <footer>
     <p>&copy; 2025 Perpustakaan Digital Rafikha 📖✨</p>
   </footer>
 
-  <!-- Cookie Consent -->
   <div class="cookie-consent" id="cookieConsent">
     <p>Kami menggunakan cookies untuk meningkatkan pengalaman Anda di situs ini.</p>
     <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Terima Semua</button>
@@ -328,6 +379,18 @@
     function rejectCookies() {
       localStorage.setItem("cookieConsent", "rejected");
       document.getElementById("cookieConsent").style.display = "none";
+    }
+
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      if (username === "rafikha" && password === "12345") {
+        alert("Login berhasil! Selamat datang, " + username);
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("welcomeCard").style.display = "block";
+      } else {
+        alert("Login gagal! Username atau password salah.");
+      }
     }
 
     window.onload = function () {
