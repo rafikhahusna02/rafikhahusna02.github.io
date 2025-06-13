@@ -146,8 +146,12 @@
 
     <h2 class="judul-halaman">📂 Halaman Lainnya</h2>
 
+    <!-- CARD DATA PENGUNJUNG TERBARU -->
+    <div id="dataBaru"></div>
+
+    <!-- MENU UTAMA -->
     <div class="card">
-      <a href="formulir.php" class="menu-item">
+      <a href="formulir.html" class="menu-item">
         <span>🗒️ <strong>Formulir Pengunjung</strong></span>
         <p>Catat kunjungan Anda.</p>
       </a>
@@ -188,7 +192,38 @@
       }
     }
 
-    window.onload = checkDarkMode;
+    window.onload = function () {
+      checkDarkMode();
+
+      // Ambil data dari URL
+      const params = new URLSearchParams(window.location.search);
+      const nama = params.get("nama");
+      const email = params.get("email");
+      const jenis_kelamin = params.get("jenis_kelamin");
+      const nip_nim = params.get("nip_nim");
+      const telepon = params.get("telepon");
+      const alamat = params.get("alamat");
+      const jenis_pengunjung = params.get("jenis_pengunjung");
+
+      if (nama && email) {
+        const card = document.createElement("div");
+        card.className = "card";
+        if (document.body.classList.contains("dark-mode")) {
+          card.classList.add("dark-mode");
+        }
+        card.innerHTML = `
+          <h3>👤 Data Pengunjung Terbaru</h3>
+          <p><strong>Nama:</strong> ${nama}</p>
+          <p><strong>NIP/NIM:</strong> ${nip_nim}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Telepon:</strong> ${telepon}</p>
+          <p><strong>Jenis Kelamin:</strong> ${jenis_kelamin}</p>
+          <p><strong>Alamat:</strong> ${alamat}</p>
+          <p><strong>Jenis Pengunjung:</strong> ${jenis_pengunjung}</p>
+        `;
+        document.getElementById("dataBaru").appendChild(card);
+      }
+    };
   </script>
 </body>
 </html>
